@@ -1,0 +1,112 @@
+@media ( max-width : 500px ) {
+    
+    .nav-bar {
+        
+        .hamburger-container {
+            display: unset;
+        }
+    
+        .nav-links {
+            position: absolute;
+            top: 100px;
+            display: unset;
+            width: calc( 100vw - 30px );
+            background-color: white;
+            opacity: 0;
+
+            .arrow {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: white;
+                clip-path: polygon(100% 0, 0 100%, 100% 100%);
+
+                right: 0px;
+                transform: translateY(-100%);
+
+                z-index: 1000;
+            }
+
+            .link {
+                text-align: center;
+                margin: unset;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                font-weight: 900;
+                color: $Very-dark-grayish-blue;
+                z-index: 1000;
+            }
+
+            .link:last-child {
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0px;
+                    width: 125px;
+                    height: 100%;
+                    left: 50%;
+                    border-radius: 1000px;
+                    transform: translateX(-50%);
+                    background-color: $Yellow;
+                    z-index: -1;
+                } 
+                &:hover {
+                   color: black;
+                   background-color: white;
+                }   
+            }
+        }
+    }
+
+    .first-page {
+
+        .down-arrow {
+            transform: scale(0.7);
+        }
+    }
+
+    .sec-page {
+
+        .row {
+            grid-template-columns: 1fr;
+            text-align: center;
+            
+            .image-container {
+                grid-row-start: 1;
+            } 
+        }
+
+        .row:nth-child(2) {
+
+            .decription {
+                grid-column-start: unset;
+                grid-column-end: unset;
+            }
+        }
+
+        .third-row {
+            grid-template-columns: 1fr;
+            display: unset;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 600px;
+            }
+
+            .text-in-image {
+                height: 600px;
+            }
+        }
+    }
+
+    footer {
+        .image-gallery {
+            flex-wrap: wrap;
+            
+            img {
+                width: 50%;
+            }
+        }
+    }
+}
